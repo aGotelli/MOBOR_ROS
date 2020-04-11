@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- Launch Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz">
+  </node>
+
+  <!-- Launch the simulator -->
+  <node pkg="mobile_robots" type="simulator" name="simulator" >
+  </node>
+
+  <!-- Launch the controller -->
+  <node pkg="mobile_robots" type="lyapunov_2_0" name="lyapunov_2_0" >
+  </node>
+
+  <!-- Launch the target -->
+  <node pkg="mobile_robots" type="circular_target" name="circular_target" >
+  </node>
+
+  <!-- Launch the robot -->
+  <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+  </node>
+
+
+</launch>

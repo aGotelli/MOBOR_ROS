@@ -1,0 +1,49 @@
+<launch>
+
+  <!-- Launch Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz">
+  </node>
+
+  <!-- Launch the simulator -->
+  <node pkg="mobile_robots" type="circular_target" name="circular_target" >
+    <param name="omega" type="double" value="1.1" />
+  </node>
+
+  <group ns="static">
+
+    <!-- Launch the simulator -->
+    <node pkg="mobile_robots" type="simulator" name="simulator" >
+      <remap from="/static/TargetReference" to="/TargetReference" />
+    </node>
+
+    <!-- Launch the controller -->
+    <node pkg="mobile_robots" type="staticfeedback_2_0" name="staticfeedback_2_0" >
+      <remap from="/static/TargetReference" to="/TargetReference" />
+    </node>
+
+    <!-- Launch the robot -->
+    <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+    </node>
+
+  </group>
+
+  <group ns="Lyapunov">
+
+    <!-- Launch the simulator -->
+    <node pkg="mobile_robots" type="simulator" name="simulator" >
+      <remap from="/Lyapunov/TargetReference" to="/TargetReference" />
+    </node>
+
+    <!-- Launch the controller -->
+    <node pkg="mobile_robots" type="lyapunov_2_0" name="lyapunov_2_0" >
+      <remap from="/Lyapunov/TargetReference" to="/TargetReference" />
+    </node>
+
+    <!-- Launch the robot -->
+    <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+    </node>
+
+  </group>
+
+
+</launch>

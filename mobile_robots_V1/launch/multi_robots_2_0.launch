@@ -1,0 +1,65 @@
+<launch>
+
+  <!-- Launch Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz">
+  </node>
+
+  <group ns="serie_1">
+
+    <!-- Launch the simulator -->
+    <node pkg="mobile_robots" type="simulator" name="simulator" >
+    </node>
+
+    <!-- Launch the controller -->
+    <node pkg="mobile_robots" type="staticfeedback_2_0" name="staticfeedback_2_0" >
+    </node>
+
+    <!-- Launch the target -->
+    <node pkg="mobile_robots" type="circular_target" name="circular_target" >
+      <param name="radius" type="double" value="3.0" />
+    </node>
+
+    <!-- Launch the robot -->
+    <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+    </node>
+  </group>
+
+  <group ns="serie_2">
+    <!-- Launch the simulator -->
+    <node pkg="mobile_robots" type="simulator" name="simulator" >
+    </node>
+
+    <!-- Launch the controller -->
+    <node pkg="mobile_robots" type="staticfeedback_2_0" name="staticfeedback_2_0" >
+    </node>
+
+    <!-- Launch the target -->
+    <node pkg="mobile_robots" type="circular_target" name="circular_target" >
+      <param name="radius" type="double" value="4.0" />
+    </node>
+
+    <!-- Launch the robot -->
+    <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+    </node>
+  </group>
+
+  <group ns="serie_3">
+    <!-- Launch the simulator -->
+    <node pkg="mobile_robots" type="simulator" name="simulator" >
+    </node>
+
+    <!-- Launch the controller -->
+    <node pkg="mobile_robots" type="staticfeedback_2_0" name="staticfeedback_2_0" >
+    </node>
+
+    <!-- Launch the target -->
+    <node pkg="mobile_robots" type="circular_target" name="circular_target" >
+      <param name="radius" type="double" value="5.0" />
+    </node>
+
+    <!-- Launch the robot -->
+    <node pkg="mobile_robots" type="robot_2_0" name="robot_2_0" >
+    </node>
+  </group>
+
+</launch>

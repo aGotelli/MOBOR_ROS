@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- Launch Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz">
+  </node>
+
+  <!-- Launch the controller -->
+  <node pkg="mobile_robots_v2" type="mobile_robots_v2_static_feedback_2_0" name="staticfeedback_2_0" >
+  </node>
+
+  <!-- Launch the target -->
+  <node pkg="mobile_robots_v2" type="mobile_robots_v2_circular_target" name="circular_target" >
+  </node>
+
+  <!-- Launch the robot -->
+  <node pkg="mobile_robots_v2" type="mobile_robots_v2_robot_2_0" name="robot_2_0" >
+  </node>
+
+</launch>
