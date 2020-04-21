@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- Launch Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mobile_robots_v3)/rviz/one_robot.rviz">
+  </node>
+
+  <!-- Launch the controller -->
+  <node pkg="mobile_robots_v3" type="mobile_robots_v3_static_feedback_2_0" name="staticfeedback_2_0" >
+  </node>
+
+  <!-- Launch the target -->
+  <node pkg="mobile_robots_v3" type="mobile_robots_v3_cardroid_target" name="cardroid_target" >
+    <param name="inner_radius" value="1.0" />
+    <param name="outter_radius" value="2.0" />
+  </node>
+
+  <!-- Launch the robot -->
+  <node pkg="mobile_robots_v3" type="mobile_robots_v3_robot_2_0" name="robot_2_0" >
+  </node>
+
+  <!-- Launch the reconfigure gui -->
+  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" >
+  </node>
+
+  <!-- <include file="$(find mobile_robots_v3)/robots/rviz.launch"> -->
+
+
+
+</launch>

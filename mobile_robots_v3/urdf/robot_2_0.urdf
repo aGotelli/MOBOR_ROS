@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="robot_2_0" >
+
+
+  <property name="a" value="0.6" />
+  <property name="b" value="0.4" />
+  <property name="wheelradius" value="0.07" />
+  <property name="wheelthikness" value="0.01" />
+  <property name="pi" value="3.1415" />
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+<!-- Links -->
+
+<link name="moving_platform">
+  <visual>
+      <origin xyz="0 0 wheelradius" rpy="0 0 0" />
+    <geometry>
+      <cylinder length="0.5" radius="0.025"/>
+    </geometry>
+<material name="matbase"/>
+  </visual>
+</link>
+
+
+
+</robot>
