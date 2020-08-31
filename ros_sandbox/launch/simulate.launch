@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="rosbag" type="play" name="play" args="-r 100 $(find ros_sandbox)/rosbag/timeseq.bag">
+  </node>
+
+  <node pkg="ros_sandbox" type="ros_sandbox_simulated_timer" name="simulated_timer" output="screen">
+  </node>
+
+</launch>

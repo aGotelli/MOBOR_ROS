@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="ros_sandbox" type="ros_sandbox_timer" name="timer" output="screen">
+  </node>
+
+</launch>
